@@ -2317,43 +2317,55 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Project cards: stack visual + info vertically */
             .project-card.featured-uniora,
             .project-card.featured-bloomgirl,
             .project-card.featured-medeciel,
             .project-card.featured-harfa {
                 grid-column: span 1;
                 grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
             }
 
+            /* Ensure showcase images/phones areas are visible */
+            .uniora-preview-side,
+            .phone-mockup-stage,
             .medeciel-showcase,
             .harfa-showcase {
                 border-right: none;
                 border-bottom: 1px solid var(--border-card);
                 min-height: 280px;
+                width: 100%;
+                overflow: visible;
             }
 
-            .harfa-phone {
+            .phone-mockup-stage {
+                min-height: 380px;
+                padding: 24px 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .smartphone-frame {
                 width: 140px;
                 height: 290px;
             }
 
-            .uniora-preview-side,
-            .phone-mockup-stage {
-                border-right: none;
-                border-bottom: 1px solid var(--border-card);
-                min-height: 240px;
+            .harfa-phone {
+                width: 130px;
+                height: 270px;
             }
 
-            .phone-mockup-stage {
-                min-height: 420px;
-                padding: 24px 10px;
+            /* Make quizor & medeciel laptop/phone areas stack nicely */
+            .quizor-phones-row,
+            .medeciel-laptops-row {
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            .smartphone-frame {
-                width: 160px;
-                height: 330px;
-            }
-
+            /* Bento / About / Contact grids */
             .bento-trio-grid {
                 grid-template-columns: 1fr;
             }
@@ -2364,6 +2376,11 @@
 
             .contact-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Hide 3D cubes on small screens to avoid overlap */
+            .cs-3d-object {
+                display: none;
             }
         }
 
@@ -2398,6 +2415,94 @@
 
             .form-row-2 {
                 grid-template-columns: 1fr;
+            }
+
+            /* Hero portrait smaller on mobile */
+            .hero-portrait-stage {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            /* Project images visible on small screens */
+            .uniora-preview-side {
+                min-height: 220px;
+            }
+
+            .phone-mockup-stage {
+                min-height: 300px;
+                padding: 16px 6px;
+            }
+
+            .smartphone-frame {
+                width: 120px;
+                height: 250px;
+            }
+
+            .harfa-phone {
+                width: 110px;
+                height: 230px;
+            }
+
+            .medeciel-showcase,
+            .harfa-showcase {
+                min-height: 240px;
+            }
+
+            .proj-info {
+                padding: 24px 20px;
+            }
+
+            /* Bento cards stack */
+            .bento-trio-grid,
+            .exp-edu-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Quizor laptop hide on mobile if too cramped */
+            .quizor-laptop-wrap {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-big-title {
+                font-size: clamp(3rem, 14vw, 6rem);
+            }
+
+            .section-title-xl {
+                font-size: clamp(2rem, 10vw, 4rem);
+            }
+
+            .smartphone-frame {
+                width: 100px;
+                height: 210px;
+            }
+
+            .harfa-phone {
+                width: 95px;
+                height: 200px;
+            }
+
+            .phone-mockup-stage {
+                min-height: 250px;
+                gap: 10px;
+            }
+
+            .project-card {
+                border-radius: 16px;
+            }
+
+            .proj-info {
+                padding: 20px 16px;
+            }
+
+            .bento-card {
+                padding: 24px 16px;
+            }
+
+            .container {
+                padding: 0 16px;
             }
         }
         /* ============================================================
